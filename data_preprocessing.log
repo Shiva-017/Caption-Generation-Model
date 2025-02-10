@@ -1,0 +1,10 @@
+2024-10-30 19:12:38,417 - INFO - Starting data preprocessing for flickr30k dataset.
+2024-10-30 19:25:02,281 - INFO - Starting data preprocessing for flickr30k dataset.
+2024-10-30 19:29:33,240 - INFO - Starting data preprocessing for flickr30k dataset.
+2024-10-30 19:52:18,507 - INFO - Starting data preprocessing for flickr30k dataset.
+2024-10-30 19:59:18,790 - INFO - Starting data preprocessing for flicker30k dataset.
+2024-10-30 19:59:18,910 - INFO - Original number of caption entries: 31014
+2024-10-30 19:59:18,910 - ERROR - The captions CSV file must contain 'image' and 'caption' columns.
+2024-10-30 19:59:18,913 - ERROR - Data preprocessing failed due to errors in the dataset.
+2024-10-30 20:04:21,775 - INFO - Starting data preprocessing for flicker30k dataset.
+2024-10-30 20:04:21,882 - INFO - Original number of entries: 31014

@@ -1,0 +1,34 @@
++------------------+           +------------------+
+|   Process 0      |           |   Process 1      |
+|  (GPU 0)         |           |  (GPU 1)         |
++------------------+           +------------------+
+         |                              |
+         |  Local Batch                 |  Local Batch
+         |  Data Loading                |  Data Loading
+         v                              v
++------------------+           +------------------+
+|   Model Replica  |           |   Model Replica  |
+|      Forward     |           |      Forward     |
++------------------+           +------------------+
+         |                              |
+         |  Compute Gradients           |  Compute Gradients
+         v                              v
++------------------+           +------------------+
+|  Gradients w.r.t |           |  Gradients w.r.t |
+|   Parameters     |           |   Parameters     |
++------------------+           +------------------+
+         |                              |
+         |  Gradient Synchronization    |  Gradient Synchronization
+         |   (All-Reduce)               |   (All-Reduce)
+         v                              v
++------------------+           +------------------+
+|  Synchronized    |           |  Synchronized    |
+|   Gradients      |           |   Gradients      |
++------------------+           +------------------+
+         |                              |
+         |  Optimizer Step              |  Optimizer Step
+         v                              v
++------------------+           +------------------+
+|  Updated Model   |           |  Updated Model   |
+|   Parameters     |           |   Parameters     |
++------------------+           +------------------+
